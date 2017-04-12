@@ -1,27 +1,26 @@
-package com.example.youssefalaa.reportcard;
+package com.example.youssefalaa;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by youssef alaa on 11/04/2017.
+ * Created by youssef alaa on 12/04/2017.
  */
+public class reportCard {
 
-public class ReportCard {
-
-    private String StudentName;
+    private String studentName;
     private List<Integer> grades;
     private int Year;
 
 
-    public ReportCard(String sName,int year) {
-        StudentName = sName;
+    public reportCard(String sName, int date) {
+        studentName = sName;
         this.grades = new ArrayList<>();
-         Year = year;
+        Year = date;
     }
 
     public String getSName() {
-        return StudentName;
+        return studentName;
     }
 
     public List<Integer> getGrades() {
@@ -36,21 +35,21 @@ public class ReportCard {
     public int getYear() {
         return Year;
     }
-    public float Average() {
 
+    public float average() {
         int sum = 0;
         for (int i = 0; i < grades.size(); i++) {
             sum = sum + grades.get(i);
         }
-        float average = sum / grades.size();
-        return average;
+        float Average = sum / grades.size();
+        return Average;
     }
 
     @Override
     public String toString() {
         return "ReportCard{" +
                 ", studentName='" + getSName() + '\'' +
-                ", Average='" + Average() + '\'' +
+                ", Average='" + average() + '\'' +
                 ", year=" + getYear() +
                 '}';
     }
